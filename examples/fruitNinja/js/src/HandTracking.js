@@ -12,9 +12,9 @@ HandTracking = function(canvas_width, canvas_height) {
 
   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
   if (navigator.getUserMedia) {
-    navigator.getUserMedia({ video: { 'mandatory': { 'depth': true}} },
+    navigator.getUserMedia({ depth: true },
           function(stream) {
-            video.src = window.webkitURL.createObjectURL(stream);
+            video.src = window.URL.createObjectURL(stream);
             shadowCanvas.style.display="block";
             shadowCanvas.width=gameWidth;
             shadowCanvas.height=gameHeight;
